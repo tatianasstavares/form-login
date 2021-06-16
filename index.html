@@ -18,27 +18,31 @@
               <p>fieldly</p>
             </div>
             <div class="login-info">
-              <p>Log in.</p>
-              <p>
+              <p class="login">Log in.</p>
+              <p class="login-instruction">
                 Log in with your data that you entered during your registration.
               </p>
             </div>
             <div class="form-container">
-              <p>Your e-mail</p>
-              <form>
-                <input
-                  type="email"
-                  class="input-email"
-                  placeholder="name@domain.com"
-                />
-                <p>Password</p>
-                <input
-                  type="password"
-                  class="input-password"
-                  placeholder="at least 8 characters"
-                />
-                <input type="checkbox" class="checkbox" />
-                <p>keep me logged in</p>
+              <div class="form-input">
+                <form>
+                    <label for="email">Your e-mail</label>
+                  <input
+                    id="email"
+                    type="email"
+                    class="input-email"
+                    placeholder="name@domain.com"
+                  />
+                  <label for="password">Password</label>
+                  <input
+                    id="password"
+                    type="password"
+                    class="input-password"
+                    placeholder="at least 8 characters"
+                  />
+              </div>
+                <input type="checkbox" class="checkbox" id="keep-me" />
+                <label for="keep-me">keep me logged in</label>
                 <button class="button-submit">Log in</button>
               </form>
             </div>

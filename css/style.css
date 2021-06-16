@@ -27,7 +27,6 @@
   display: flex;
   flex-direction: column;
   margin: auto;
-  border: solid 1px black;
 }
 
 .logo {
@@ -43,4 +42,31 @@
 
 .logo img {
   margin-top: -5px;
+}
+
+.login-info .login {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 18px;
+}
+.login-info .login-instruction {
+  font-size: 16px;
+  color: #bdbdbd;
+  margin-bottom: 18px;
+}
+
+.form-container .form-input label {
+  font-size: 14px;
+  color: #9e9e9e;
+  font-weight: 500;
+}
+
+.form-container .form-input input {
+  width: 100%;
+  height: 40px;
+  margin: 6px 0;
+
+  padding: 8px;
+  border: 1px solid rgb(201, 193, 193);
+  border-radius: 4px;
 }
