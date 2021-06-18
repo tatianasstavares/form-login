@@ -71,23 +71,11 @@
   border-radius: 4px;
 }
 
-.form-input::-webkit-input-placeholder {
-}
-
 input::placeholder {
   color: #bdbdbd;
 }
 
-.check-box-button {
-  display: flex;
-  flex-direction: column;
-  color: #bdbdbd;
-}
-.check-box {
-  margin: 20px 0px 20px 0px;
-}
-
-.check-box-button button {
+.button-submit {
   height: 40px;
   border-radius: 4px;
   border: 1px;
@@ -95,24 +83,5 @@ input::placeholder {
 
   color: #ffff;
   background-color: #64b5f6;
-  margin-bottom: 20px;
-}
-
-.last-info {
-  text-align: center;
-}
-.last-info:last-child {
-  color: #1976d2;
-  font-weight: bold;
-}
-
-.info-account {
-  display: flex;
-  justify-content: center;
-  font-weight: bold;
-  margin-right: 4px;
-  color: #9e9e9e;
-}
-.info-account span {
-  color: #1976d2;
+  margin-top: 20px;
 }

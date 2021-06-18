@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/style.css" />
-    <title>Formulário de Login</title>
+    <title>Sign In</title>
   </head>
   <body>
     <main>
@@ -18,9 +18,9 @@
               <p>fieldly</p>
             </div>
             <div class="login-info">
-              <p class="login">Log in.</p>
+              <p class="login">Sign In</p>
               <p class="login-instruction">
-                Log in with your data that you entered during your registration.
+                Sign In with your data that you entered during your registration.
               </p>
             </div>
             <div class="form-container">
@@ -41,15 +41,18 @@
                     placeholder="at least 8 characters"
                   />
               </div>
-                <input type="checkbox" class="checkbox" id="keep-me" />
-                <label for="keep-me">keep me logged in</label>
-                <button class="button-submit">Log in</button>
+                <div class="check-box-button">
+                 <div class="check-box">
+                  <input type="checkbox" class="checkbox" id="keep-me" />
+                  <label for="keep-me">keep me logged in</label>
+                 </div>
+                  <button type="submit" class="button-submit">Sign In</button>
+                </div>
               </form>
             </div>
             <div class="last-info">
               <div class="info-account">
-                <p>Don't have an account?</p>
-                <p>Sign up</p>
+                <p>Don't have an account? <span><a href="#">Sign up</a></span></p>
               </div>
               <p>Forgot password?</p>
             </div>
@@ -58,5 +61,6 @@
         <div class="main-container-result"></div>
       </div>
     </main>
+    <script src="./script.js"></script>
   </body>
 </html>
