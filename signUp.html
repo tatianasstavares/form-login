@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/signUp.css" />
-    <title>Sign In</title>
+    <title>Sign Up</title>
   </head>
   <body>
     <main>
@@ -26,7 +26,7 @@
             </div>
             <div class="form-container">
               <div class="form-input">
-                <form>
+                <form >
                     <label for="name">Your name</label>
                   <input
                     id="name"
@@ -34,6 +34,7 @@
                     class="input-name"
                     placeholder="Your name"
                   />
+                  <div class="input-name-error"></div>
                     <label for="email">Your e-mail</label>
                   <input
                     id="email"
@@ -41,6 +42,7 @@
                     class="input-email"
                     placeholder="name@domain.com"
                   />
+                  <div class="input-email-error"></div>
                   <label for="password">Password</label>
                   <input
                     id="password"
@@ -48,13 +50,16 @@
                     class="input-password"
                     placeholder="at least 8 characters"
                   />
+                  <div class="input-password-error"></div>
                   <label for="confirm-password">Confirm password</label>
                   <input
                     id="confirm-password"
                     type="password"
-                    class="input-password"
+                    class="input-confirm-password"
                     placeholder="at least 8 characters"
                   />
+                  <div class="input-password-confirm-error"></div>
+          
               </div>
                  </div>
                   <button type="submit" class="button-submit">Sign Up</button>
@@ -66,6 +71,6 @@
 
       </div>
     </main>
-    <script src="./script.js"></script>
+    <script src="./js/signUp.js"></script>
   </body>
 </html>
