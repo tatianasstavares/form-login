@@ -15,7 +15,7 @@ const inputConfirmPasswordError = document.querySelector(
 loginButton.addEventListener("click", (e) => {
   e.preventDefault();
 
-  ValidationService.clearAllErrors([inputEmailError]);
+  ValidationService.clearAllErrors([inputEmailError, inputNameError]);
 
   const data = {
     name: inputName.value,
@@ -24,7 +24,12 @@ loginButton.addEventListener("click", (e) => {
     confirmPassword: inputConfirmPassword.value,
   };
 
-  const { email } = data;
+  const { name, email } = data;
+
+  const nameValidation = ValidationService.validateName(name);
+  if (nameValidation.hasError) {
+    inputNameError.textContent = nameValidation.errorMessage;
+  }
 
   const mailValidation = ValidationService.validateEmail(email);
   if (mailValidation.hasError) {

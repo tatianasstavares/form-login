@@ -1,5 +1,5 @@
 import CustomError from "../model/CustomError.js";
-import { validateEmail } from "../utils/functions.js";
+import { validateEmail, validateName } from "../utils/functions.js";
 import UserService from "./UserService.js";
 
 class ValidationService {
@@ -7,6 +7,19 @@ class ValidationService {
     errors.forEach((error) => {
       error.textContent = "";
     });
+  }
+
+  validateName(name) {
+    if (!name) {
+      return new CustomError("Campo vazio, coloque seu nome.");
+    }
+
+    const isValidName = validateName(name);
+    if (!isValidName) {
+      return new CustomError("Digitar apenas letras");
+    }
+
+    return { hasError: false };
   }
 
   validateEmail(email) {
@@ -23,7 +36,6 @@ class ValidationService {
     if (userMailAlreadyExists) {
       return new CustomError("Email indisponível.");
     }
-
     return { hasError: false };
   }
 }
