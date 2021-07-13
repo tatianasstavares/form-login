@@ -1,5 +1,5 @@
 import CustomError from "../model/CustomError.js";
-import { validateEmail, validateName } from "../utils/functions.js";
+import { validateEmailRegex, validateNameRegex, validatePasswordIsNumber, comparePasswords } from "../utils/functions.js";
 import UserService from "./UserService.js";
 
 class ValidationService {
@@ -14,7 +14,7 @@ class ValidationService {
       return new CustomError("Campo vazio, coloque seu nome.");
     }
 
-    const isValidName = validateName(name);
+    const isValidName = validateNameRegex(name);
     if (!isValidName) {
       return new CustomError("Digitar apenas letras");
     }
@@ -27,7 +27,7 @@ class ValidationService {
       return new CustomError("Campo vazio, coloque seu email.");
     }
 
-    const isValidMail = validateEmail(email);
+    const isValidMail = validateEmailRegex(email);
     if (!isValidMail) {
       return new CustomError("Email inválido.");
     }
@@ -37,6 +37,27 @@ class ValidationService {
       return new CustomError("Email indisponível.");
     }
     return { hasError: false };
+  }
+
+  validatePassword(password) {
+    if (!password) {
+      return new CustomError("Campo vazio, coloque a password")
+    }
+    const isValidPassword = validatePasswordIsNumber(password);
+    if (!isValidPassword) {
+      return new CustomError("Senha inválida")
+    }
+    return { hasError: false}
+  }
+  validateConfirmPassword (password,newPassword) {
+    if (!newPassword) {
+      return new CustomError("Campo vazio, coloque a nova password")
+    }
+    const isValidConfirmPassword = comparePasswords(password, newPassword)
+    if (!isValidConfirmPassword) {
+      return new CustomError("Passwords não são iguais.")
+    }
+    return { hasError: false }
   }
 }
 

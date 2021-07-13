@@ -16,9 +16,9 @@ export const saveUsersInLocalstorage = (user) => {
   return users;
 };
 
-export const validateName = (name) => /^[A-Za-z ]+$/.test(name);
+export const validateNameRegex = (name) => /^[A-Za-z ]+$/.test(name);
 
-export const validateEmail = (email) =>
+export const validateEmailRegex = (email) =>
   /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
     email
   );

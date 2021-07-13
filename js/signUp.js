@@ -1,6 +1,7 @@
+import User from "./model/User.js";
 import ValidationService from "./services/ValidationService.js";
 
-const loginButton = document.querySelector(".button-submit");
+const signUpButton = document.querySelector(".button-submit");
 const inputName = document.querySelector(".input-name");
 const inputNameError = document.querySelector(".input-name-error");
 const inputEmail = document.querySelector(".input-email");
@@ -12,19 +13,19 @@ const inputConfirmPasswordError = document.querySelector(
   ".input-confirm-password-error"
 );
 
-loginButton.addEventListener("click", (e) => {
+signUpButton.addEventListener("click", (e) => {
   e.preventDefault();
 
-  ValidationService.clearAllErrors([inputEmailError, inputNameError]);
-
-  const data = {
+  ValidationService.clearAllErrors([inputEmailError, inputNameError,inputPasswordError,inputConfirmPasswordError]);
+  
+  const user = new User({
     name: inputName.value,
     email: inputEmail.value,
     password: inputPassword.value,
-    confirmPassword: inputConfirmPassword.value,
-  };
+    confirmPassword: inputConfirmPassword.value
+  });
 
-  const { name, email } = data;
+  const { name, email, password, confirmPassword } = user;
 
   const nameValidation = ValidationService.validateName(name);
   if (nameValidation.hasError) {
@@ -34,5 +35,15 @@ loginButton.addEventListener("click", (e) => {
   const mailValidation = ValidationService.validateEmail(email);
   if (mailValidation.hasError) {
     inputEmailError.textContent = mailValidation.errorMessage;
+  }
+
+  const passwordValidation = ValidationService.validatePassword(password);
+  if (passwordValidation.hasError) {
+    inputPasswordError.textContent = passwordValidation.errorMessage;
+  }
+
+  const passwordConfirmValidation = ValidationService.validateConfirmPassword(password, confirmPassword);
+  if (passwordConfirmValidation.hasError) {
+    inputConfirmPasswordError.textContent = passwordConfirmValidation.errorMessage;
   }
 });
