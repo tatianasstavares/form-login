@@ -1,4 +1,4 @@
-#Registration and login form
+# Registration and login form
 
 Login and registration form, data were persisted in localStorage, I could practice handling the information received via input, as well as validations.
 
